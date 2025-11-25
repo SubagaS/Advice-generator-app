@@ -18,9 +18,6 @@ function App() {
     );
     setAdvice(res.data);
   }
-  // useEffect(() => {
-  //   loadAdvice();
-  // }, []);
 
   return (
     <div className="adviceContainer">
