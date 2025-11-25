@@ -91,3 +91,13 @@
   width: 0.85rem;
   height: 0.85rem;
 }
+
+.attribution {
+  font-size: 0.45rem;
+  color: var(--blue200);
+  padding-top: 2rem;
+  a {
+    text-decoration: none;
+    color: var(--green300);
+  }
+}

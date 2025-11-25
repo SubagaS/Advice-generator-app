@@ -1,6 +1,9 @@
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
+import desktopDiv from './assets/images/pattern-divider-desktop.svg';
+import mobileDiv from './assets/images/pattern-divider-mobile.svg';
+import dice from './assets/images/icon-dice.svg';
 
 interface AdviceData {
   slip: {
@@ -20,35 +23,41 @@ function App() {
   }
 
   return (
-    <div className="adviceContainer">
-      <img
-        src="/src/assets/images/pattern-divider-desktop.svg"
-        alt="desktop-divider"
-        className="desktopDivider"
-      />
-      <img
-        src="/src/assets/images/pattern-divider-mobile.svg"
-        alt="mobile-divider"
-        className="mobileDivider"
-      />
-      <button className="diceBtn" onClick={loadAdvice}>
+    <>
+      <div className="adviceContainer">
         <img
-          src="/src/assets/images/icon-dice.svg"
-          alt="dice-icon"
-          className="diceIcon"
+          src={desktopDiv}
+          alt="desktop-divider"
+          className="desktopDivider"
         />
-      </button>
-      {advice ? (
-        <>
-          <p className="adviceTitle">Advice #{advice.slip.id}</p>
-          <p className="adviceText">"{advice.slip.advice}"</p>
-        </>
-      ) : (
-        <p className="loadText">
-          Click below to get an <span>Advice</span>
-        </p>
-      )}
-    </div>
+        <img src={mobileDiv} alt="mobile-divider" className="mobileDivider" />
+        <button className="diceBtn" onClick={loadAdvice}>
+          <img src={dice} alt="dice-icon" className="diceIcon" />
+        </button>
+        {advice ? (
+          <>
+            <p className="adviceTitle">Advice #{advice.slip.id}</p>
+            <p className="adviceText">"{advice.slip.advice}"</p>
+          </>
+        ) : (
+          <p className="loadText">
+            Click below to get an <span>Advice</span>
+          </p>
+        )}
+      </div>
+
+      <div className="attribution">
+        Challenge by{' '}
+        <a href="https://www.frontendmentor.io/profile/SubagaS" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by{' '}
+        <a href="https://www.frontendmentor.io/profile/SubagaS">
+          Subaga Sreepathy{' '}
+        </a>
+        .
+      </div>
+    </>
   );
 }
 
