@@ -14,7 +14,7 @@ function App() {
         alt="mobile-divider"
         className="mobileDivider"
       />
-      <button>
+      <button className='diceBtn'>
         <img
           src="/src/assets/images/icon-dice.svg"
           alt="dice-icon"
