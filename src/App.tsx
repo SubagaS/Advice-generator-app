@@ -13,13 +13,17 @@ interface AdviceData {
 }
 
 function App() {
-  const [advice, setAdvice] = useState<AdviceData | null>(null);
+  const [advice, setAdvice] = useState<AdviceData>();
 
   async function loadAdvice() {
-    const res = await axios.get<AdviceData>(
-      'https://api.adviceslip.com/advice'
-    );
-    setAdvice(res.data);
+    try {
+      const res = await axios.get<AdviceData>(
+        'https://api.adviceslip.com/advice'
+      );
+      setAdvice(res.data);
+    } catch {
+      alert('Unable to fetch data');
+    }
   }
 
   return (
